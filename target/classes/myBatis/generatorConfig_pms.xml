@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+
+<!-- 工具配置文件（自动生成java类） -->
+
+<!-- D:\mybatis-generator-core-1.3.2\lib>java -jar mybatis-generator-core-1.3.2.jar -configfile generatorConfig_pms.xml -overwrite -->
+
+<generatorConfiguration>
+	<!-- 设置mysql驱动路径 -->
+	<classPathEntry location="F:/ojdbc14.jar" />
+	<!-- 此处指定生成针对MyBatis3的DAO -->
+	<context id="DB2Tables" targetRuntime="MyBatis3">
+
+		<commentGenerator>
+			<!-- 是否注释，false为注释 -->
+			<property name="suppressAllComments" value="false" />
+			<!-- 是用来除去时间信息的，这在配合类似subversion的代码管理工具时使用很有效，因为可以减少没有必要的注释迁入 -->
+			<property name="suppressDate" value="true" />
+		</commentGenerator>
+
+
+		<!-- jdbc连接信息 -->
+		<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+			connectionURL="jdbc:oracle:thin:@//172.16.16.43:1522/orcl"
+			userId="xtjc" password="123456" />
+
+		<!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer true，把JDBC DECIMAL 和 
+			NUMERIC 类型解析为java.math.BigDecimal -->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- 模型的生成信息，这里将指定这些Java model(VO)类的生成路径 -->
+		<javaModelGenerator targetPackage="cn.com.chinatelecom.pms.pojo"
+			targetProject="pms">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<!-- mybatis 的sqlMapper XML文件的生成信息，包括生成路径等 -->
+		<sqlMapGenerator targetPackage="cn.com.chinatelecom.pms.dao"
+			targetProject="pms">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="true" />
+			<!-- 从数据库返回的值被清理前后的空格 -->
+			<property name="trimStrings" value="true" />
+		</sqlMapGenerator>
+		
+		<!-- 是应用接口的生成信息(DAO Interface) -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="cn.com.chinatelecom.pms.dao" targetProject="pms">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		
+<!-- 需求管理部分 -->
+		<!-- 需求种类表 -->
+		<table schema="" tableName="REQUIRE_KIND" domainObjectName="RequireKind">
+			<generatedKey column="REQUIRE_KIND_ID" sqlStatement="select F_GETNID() FROM DUAL" identity="false" />
+		</table>
+		<!-- 需求类型表 -->
+		<table schema="" tableName="REQUIRE_TYPE" domainObjectName="RequireType">
+			<generatedKey column="REQUIRE_TYPE_ID" sqlStatement="select F_GETNID() FROM DUAL" identity="false" />
+		</table>
+		<!-- 需求表 -->
+		<table schema="" tableName="REQUIREMENT" domainObjectName="Requirement">
+			<generatedKey column="REQUIRE_ID" sqlStatement="select F_GETNID() FROM DUAL" identity="false" />
+		</table>
+		<!-- 模块表 -->
+		<table schema="" tableName="MODULE" domainObjectName="Module">
+			<generatedKey column="MODULE_ID" sqlStatement="select F_GETNID() FROM DUAL" identity="false" />
+		</table>
+		<!-- 流程表 -->
+		<table schema="" tableName="PROCESS" domainObjectName="Process">
+			<generatedKey column="PROCESS_ID" sqlStatement="select F_GETNID() FROM DUAL" identity="false" />
+		</table>
+		<!-- 成员表 -->
+		<table schema="" tableName="MEMBERS" domainObjectName="Members">
+			<generatedKey column="MEMBER_ID" sqlStatement="select F_GETNID() FROM DUAL" identity="false" />
+		</table>
+		<!-- 执行机构表 -->
+		<table schema="" tableName="EXECUTE_ORG" domainObjectName="ExecuteOrg">
+			<generatedKey column="EXECUTE_ORG_ID" sqlStatement="select F_GETNID() FROM DUAL" identity="false" />
+		</table>
+		<!--影响流程表 -->
+		<table schema="" tableName="EFFECT_PROCESS" domainObjectName="EffectProcess">
+			<generatedKey column="EFFECT_PROCESS_ID" sqlStatement="select F_GETNID() FROM DUAL" identity="false" />
+		</table>
+		<!-- 人员分组表 -->
+		<table schema="" tableName="MEMBER_GROUP" domainObjectName="MemberGroup">
+			<generatedKey column="MEMBER_GROUP_ID" sqlStatement="select F_GETNID() FROM DUAL" identity="false" />
+		</table>
+		<!-- 需求影响表 -->
+		<table schema="" tableName="REQUIRE_EFFECT" domainObjectName="RequireEffect">
+			<generatedKey column="REQUIRE_EFFECT_ID" sqlStatement="select F_GETNID() FROM DUAL" identity="false" />
+		</table>
+		<!-- 需求优先级 -->
+		<table schema="" tableName="REQUIRE_PRIORITY" domainObjectName="RequirePriority">
+			<generatedKey column="PRIORITY_ID" sqlStatement="select F_GETNID() FROM DUAL" identity="false" />
+		</table>
+		<!-- 影响功能表 -->
+		<table schema="" tableName="EFFECT_ACTION" domainObjectName="EffectAction">
+			<generatedKey column="EFFECT_ACTION_ID" sqlStatement="select F_GETNID() FROM DUAL" identity="false" />
+		</table>
+		
+	</context>
+</generatorConfiguration>

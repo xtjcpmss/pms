@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 开发者模式 -->
+	<!-- 开发模式下使用，这样可以打印出更详细的错误信息 -->
+	<constant name="struts.devMode" value="false" />
+	<!-- 当struts的配置文件修改后，系统是否自定重新加载文件，默认值为false(生产环境下使用)，开发阶段最好打开 -->
+	<constant name="struts.i18n.reload" value="false" />
+	<constant name="struts.configuration.xml.reload" value="false" />
+	<!-- 设置浏览器是否缓存静态内容，默认值为true（生产环境下使用），开发阶段最好关闭 -->
+	<constant name="struts.serve.static.browserCache" value="false" />
+	<!-- xslresult是否使用样式表缓存，开发阶段不使用 -->
+	<constant name="struts.xslt.nocache" value="true" />
+	<!-- 开发者模式 -->
+
+	<!-- 配置国际化信息 -->
+	<constant name="struts.locale" value="zh_CN" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+
+	<constant name="struts.action.extension" value="html" />
+	
+	<!-- 不拦截的URL -->
+	<constant name="struts.action.excludePattern" value="/services/*,/common/.*,/css/.*,/download/.*,/images/.*,/js/.*" />
+
+	<!-- UI标签默认主题 -->
+	<constant name="struts.ui.theme" value="simple" />
+	<!--使用spring工厂 -->
+	<constant name="struts.objectFactory" value="spring" />
+	<!--装配方式为按类型，避免名字重复 -->
+	<constant name="struts.objectFactory.spring.autoWire.alwaysRespect" value="true" />
+	<!-- <constant name="struts.objectFactory.spring.autoWire" value="type" /> -->
+	<!-- 自定义消息文件位置 -->
+	<constant name="struts.custom.i18n.resources" value="messages.ApplicationResources,messages.ApplicationResources_zh_CN,messages.errors" />
+	<!-- 上传文件最大字节数(20M) -->
+	<constant name="struts.multipart.maxSize" value="31457280" />
+	<!-- 上传文件路劲（默认：javax.servlet.context.tempdir） -->
+	<!-- <constant name="struts.multipart.saveDir" value="java.io.tmpdir" /> -->
+	
+	<!-- 页面位置 -->
+	<constant name="struts.codebehind.pathPrefix" value="/WEB-INF/pages/" />
+	<!--动态方法调用(!)。 默认为true -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<!-- 为action取名时，名字中是否允许出现（/）如果想使用通配符，应该设置为true -->
+	<constant name="struts.enable.SlashesInActionNames" value="true" />
+	<!-- 允许ONGL直接调用静态类（方法） -->
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+
+	<!-- <include file="struts-default.xml" />
+	<include file="struts/struts-default.xml" /> -->
+	<include file="struts/struts-view.xml" />
+</struts>

@@ -1,0 +1,15 @@
+cn\com\chinatelecom\pms\service\impl\ProjecGtroupServiceImpl.class
+cn\com\chinatelecom\pms\pojo\ProjecGtroupExample$GeneratedCriteria.class
+cn\com\chinatelecom\pms\pojo\Admin.class
+cn\com\chinatelecom\pms\dao\ProjecGtroupMapper.class
+cn\com\chinatelecom\pms\pojo\ProjecGtroupExample$Criterion.class
+cn\com\chinatelecom\pms\pojo\AdminExample.class
+cn\com\chinatelecom\pms\action\MainAction.class
+cn\com\chinatelecom\pms\pojo\ProjecGtroupExample.class
+cn\com\chinatelecom\pms\service\ProjecGtroupService.class
+cn\com\chinatelecom\pms\dao\AdminMapper.class
+cn\com\chinatelecom\pms\pojo\AdminExample$Criteria.class
+cn\com\chinatelecom\pms\pojo\ProjecGtroup.class
+cn\com\chinatelecom\pms\pojo\ProjecGtroupExample$Criteria.class
+cn\com\chinatelecom\pms\pojo\AdminExample$GeneratedCriteria.class
+cn\com\chinatelecom\pms\pojo\AdminExample$Criterion.class

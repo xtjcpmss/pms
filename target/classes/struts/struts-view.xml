@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC   
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"   
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="basicInfoManagement"  extends="struts-default">
+	
+	</package>
+	
+	<package name="testManagement"  extends="struts-default">
+	
+	</package>
+	
+	<package name="delogyManagement"  extends="struts-default">
+	
+	</package>
+	
+	<package name="technicalManagement"  extends="struts-default">
+	
+	</package>
+
+	<package name="login" extends="struts-default">
+		<!-- 登录 -->
+		<action name="login!*" method="{1}"
+			class="cn.com.chinatelecom.pms.action.MainAction">
+			<result name="login">/WEB-INF/pages/login.jsp</result>
+		</action>
+		<!-- 退出登录 -->
+		 <action name="logout" method="logout" class="cn.com.chinatelecom.pms.action.MainAction"> 
+			<result name="logout" type="redirect">/WEB-INF/pages/login.jsp</result>
+			 </action> 
+			
+	</package>
+	
+	<!-- 需求管理 -->
+	
+	<package name="view" extends="struts-default">
+		<!-- JSON流 -->
+		<global-results>
+			<result name="jsonInputStream" type="stream">
+				<param name="inputName">inputStream</param>
+			</result>
+		</global-results>
+		<!-- ************************* -->
+		<!-- ********** 首页 ********** -->
+		<!-- ************************* -->
+		<!-- 用户首页 -->
+		<action name="main!*" method="{1}"
+			class="cn.com.chinatelecom.pms.action.MainAction">
+			<result name="success" type="dispatcher">/WEB-INF/pages/main.jsp</result>
+			<result name="home" type="dispatcher">/WEB-INF/pages/home.jsp</result>
+		</action>
+		
+		<!-- 需求管理 -->
+		<action name="require!*" method="{1}"
+			class="cn.com.chinatelecom.pms.action.RequireManageAction">
+			<result name="requireUI">/WEB-INF/pages/requirement/requirementManege.jsp</result>
+			
+		</action>
+		<!-- 任务管理 -->
+		<action name="task!*" method="{1}"
+			class="cn.com.chinatelecom.pms.action.TaskManagementAction">
+			<result name="taskPage">/WEB-INF/pages/taskManagement/taskManagement.jsp</result>
+			
+		</action>
+	</package>
+</struts>
+
+
